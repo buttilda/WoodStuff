@@ -1,0 +1,79 @@
+package ganymedes01.woodstuff;
+
+import ganymedes01.woodstuff.client.BookshelfRenderer;
+import ganymedes01.woodstuff.lib.Reference;
+import ganymedes01.woodstuff.modules.BiomesOPlentyModule;
+import ganymedes01.woodstuff.modules.ExtraBiomesXLModule;
+import ganymedes01.woodstuff.modules.ForestryModule;
+import ganymedes01.woodstuff.modules.HighlandsModule;
+import ganymedes01.woodstuff.modules.VanillaModule;
+import ganymedes01.woodstuff.modules.WoodModule;
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER, dependencies = Reference.DEPENDENCIES)
+public class WoodStuff {
+
+	@Instance(Reference.MOD_ID)
+	public static WoodStuff instance;
+
+	public static CreativeTabs tab = new CreativeTabs(Reference.MOD_ID) {
+
+		@Override
+		public Item getTabIconItem() {
+			return Item.getItemFromBlock(Blocks.planks);
+		}
+	};
+
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+		ConfigHandler.INSTANCE.init(event.getSuggestedConfigurationFile());
+		FMLCommonHandler.instance().bus().register(ConfigHandler.INSTANCE);
+	}
+
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
+		MinecraftForge.EVENT_BUS.register(instance);
+
+		WoodModule.registerModule(new VanillaModule());
+		WoodModule.registerModule(new ForestryModule());
+		WoodModule.registerModule(new ExtraBiomesXLModule());
+		WoodModule.registerModule(new BiomesOPlentyModule());
+		WoodModule.registerModule(new HighlandsModule());
+
+		WoodModule.addModulesBlocks();
+	}
+
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		RenderingRegistry.registerBlockHandler(new BookshelfRenderer());
+	}
+
+	@EventHandler
+	public void processIMCRequests(IMCEvent event) {
+	}
+
+	@SubscribeEvent
+	public void getTooltip(ItemTooltipEvent event) {
+		if (event.itemStack == null)
+			return;
+
+		Block block = Block.getBlockFromItem(event.itemStack.getItem());
+		if (block != null && block != Blocks.air)
+			event.toolTip.add(Block.blockRegistry.getNameForObject(block));
+	}
+}

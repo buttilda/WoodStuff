@@ -1,0 +1,20 @@
+[
+{
+  "modid": "woodstuff",
+  "name": "WoodStuff",
+  "description": "Adds a lot of wood stuff!",
+  "version": "1.0.0",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "ganymedes01"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
