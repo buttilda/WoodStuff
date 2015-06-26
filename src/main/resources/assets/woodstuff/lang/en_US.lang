@@ -1,3 +1,5 @@
+itemGroup.woodstuff=Wood Stuff
+
 tile.woodstuff.button.name=Button (%s)
 tile.woodstuff.bookshelf.name=Bookshelf (%s)
 tile.woodstuff.fence.name=Fence (%s)
