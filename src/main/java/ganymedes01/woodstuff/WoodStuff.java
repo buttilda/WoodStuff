@@ -8,12 +8,9 @@ import ganymedes01.woodstuff.modules.ForestryModule;
 import ganymedes01.woodstuff.modules.HighlandsModule;
 import ganymedes01.woodstuff.modules.VanillaModule;
 import ganymedes01.woodstuff.modules.WoodModule;
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -23,7 +20,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLInterModComms.IMCEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER, dependencies = Reference.DEPENDENCIES)
 public class WoodStuff {
@@ -47,8 +43,6 @@ public class WoodStuff {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		MinecraftForge.EVENT_BUS.register(instance);
-
 		WoodModule.registerModule(new VanillaModule());
 		WoodModule.registerModule(new ForestryModule());
 		WoodModule.registerModule(new ExtraBiomesXLModule());
@@ -65,15 +59,5 @@ public class WoodStuff {
 
 	@EventHandler
 	public void processIMCRequests(IMCEvent event) {
-	}
-
-	@SubscribeEvent
-	public void getTooltip(ItemTooltipEvent event) {
-		if (event.itemStack == null)
-			return;
-
-		Block block = Block.getBlockFromItem(event.itemStack.getItem());
-		if (block != null && block != Blocks.air)
-			event.toolTip.add(Block.blockRegistry.getNameForObject(block));
 	}
 }
