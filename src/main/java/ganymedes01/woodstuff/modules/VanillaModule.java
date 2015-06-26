@@ -21,4 +21,9 @@ public class VanillaModule extends WoodModule {
 		addWood(Blocks.planks, 4, true, true, true, true, true);
 		addWood(Blocks.planks, 5, true, true, true, true, true);
 	}
+
+	@Override
+	public String getName() {
+		return "Vanilla";
+	}
 }

@@ -8,6 +8,7 @@ import ganymedes01.woodstuff.blocks.BlockWoodPressurePlate;
 import ganymedes01.woodstuff.items.ItemBlockWood;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import net.minecraft.block.Block;
@@ -32,7 +33,12 @@ public abstract class WoodModule {
 				module.addBlocks();
 	}
 
+	public static List<WoodModule> getModules() {
+		return Collections.unmodifiableList(modules);
+	}
+
 	private final String modID;
+	private boolean iEnabled = true;
 
 	protected WoodModule(String modID) {
 		this.modID = modID;
@@ -40,8 +46,16 @@ public abstract class WoodModule {
 
 	public abstract void addBlocks();
 
+	public String getName() {
+		return modID;
+	}
+
 	public boolean shouldUse() {
-		return Loader.isModLoaded(modID);
+		return iEnabled && Loader.isModLoaded(modID);
+	}
+
+	public void setEnabled(boolean iEnabled) {
+		this.iEnabled = iEnabled;
 	}
 
 	protected void addWood(Block planks, int meta, boolean addButton, boolean addFence, boolean addGate, boolean addPressurePlate, boolean addBookshelf) {

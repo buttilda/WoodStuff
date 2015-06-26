@@ -37,18 +37,18 @@ public class WoodStuff {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		ConfigHandler.INSTANCE.init(event.getSuggestedConfigurationFile());
-		FMLCommonHandler.instance().bus().register(ConfigHandler.INSTANCE);
-	}
-
-	@EventHandler
-	public void init(FMLInitializationEvent event) {
 		WoodModule.registerModule(new VanillaModule());
 		WoodModule.registerModule(new ForestryModule());
 		WoodModule.registerModule(new ExtraBiomesXLModule());
 		WoodModule.registerModule(new BiomesOPlentyModule());
 		WoodModule.registerModule(new HighlandsModule());
 
+		ConfigHandler.INSTANCE.init(event.getSuggestedConfigurationFile());
+		FMLCommonHandler.instance().bus().register(ConfigHandler.INSTANCE);
+	}
+
+	@EventHandler
+	public void init(FMLInitializationEvent event) {
 		WoodModule.addModulesBlocks();
 	}
 

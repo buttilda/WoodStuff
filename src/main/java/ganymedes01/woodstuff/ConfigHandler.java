@@ -14,7 +14,6 @@ public class ConfigHandler {
 
 	public static ConfigHandler INSTANCE = new ConfigHandler();
 	public Configuration configFile;
-	public String[] usedCategories = { Configuration.CATEGORY_GENERAL };
 
 	public void init(File file) {
 		configFile = new Configuration(file);
@@ -39,9 +38,6 @@ public class ConfigHandler {
 
 					addWood(planks, meta, button, fence, gate, pressurePlate, bookshelf);
 				}
-
-				if (configFile.hasChanged())
-					configFile.save();
 			}
 
 			@Override
@@ -51,6 +47,12 @@ public class ConfigHandler {
 		};
 
 		module.addBlocks();
+
+		for (WoodModule m : WoodModule.getModules())
+			m.setEnabled(configFile.get("Modules", m.getName(), true).setRequiresMcRestart(true).getBoolean(true));
+
+		if (configFile.hasChanged())
+			configFile.save();
 	}
 
 	@SubscribeEvent
