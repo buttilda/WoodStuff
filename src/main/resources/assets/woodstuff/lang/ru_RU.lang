@@ -1,0 +1,7 @@
+itemGroup.woodstuff=Wood Stuff
+
+tile.woodstuff.button.name=Кнопка (%s)
+tile.woodstuff.bookshelf.name=Книжный шкаф (%s)
+tile.woodstuff.fence.name=Забор (%s)
+tile.woodstuff.fence_gate.name=Калитка (%s)
+tile.woodstuff.pressure_plate.name=Нажимная пластина (%s)
