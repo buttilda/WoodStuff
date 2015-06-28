@@ -3,6 +3,7 @@ package ganymedes01.woodstuff;
 import ganymedes01.woodstuff.client.BookshelfRenderer;
 import ganymedes01.woodstuff.lib.Reference;
 import ganymedes01.woodstuff.modules.BiomesOPlentyModule;
+import ganymedes01.woodstuff.modules.DendrologyModule;
 import ganymedes01.woodstuff.modules.ErebusModule;
 import ganymedes01.woodstuff.modules.ExtraBiomesXLModule;
 import ganymedes01.woodstuff.modules.ForestryModule;
@@ -44,6 +45,7 @@ public class WoodStuff {
 		WoodModule.registerModule(new BiomesOPlentyModule());
 		WoodModule.registerModule(new HighlandsModule());
 		WoodModule.registerModule(new ErebusModule());
+		WoodModule.registerModule(new DendrologyModule());
 
 		ConfigHandler.INSTANCE.init(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(ConfigHandler.INSTANCE);
