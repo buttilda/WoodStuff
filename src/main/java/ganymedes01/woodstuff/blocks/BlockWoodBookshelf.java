@@ -17,7 +17,7 @@ public class BlockWoodBookshelf extends BlockBookshelf implements IWoodBlock {
 	public static final int RENDER_ID = RenderingRegistry.getNextAvailableRenderId();
 
 	@SideOnly(Side.CLIENT)
-	public static IIcon overlay;
+	private IIcon overlay;
 	@SideOnly(Side.CLIENT)
 	public static boolean renderOverlay;
 
@@ -53,8 +53,7 @@ public class BlockWoodBookshelf extends BlockBookshelf implements IWoodBlock {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister reg) {
-		if (overlay == null)
-			overlay = reg.registerIcon(Utils.getBlockTexture("bookshelf"));
+		overlay = reg.registerIcon(Utils.getBlockTexture("bookshelf"));
 	}
 
 	@Override
