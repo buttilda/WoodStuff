@@ -92,7 +92,7 @@ public abstract class WoodModule {
 	}
 
 	private void registerBlock(Block block) {
-		String name = block.getUnlocalizedName().replaceAll("tile.woodstuff.", "");
+		String name = block.getUnlocalizedName().replaceAll("tile.woodstuff.", "").replaceAll(":", ".");
 		GameRegistry.registerBlock(block, ItemBlockWood.class, name);
 	}
 }
