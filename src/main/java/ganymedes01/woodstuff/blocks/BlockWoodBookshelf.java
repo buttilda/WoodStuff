@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockBookshelf;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -35,6 +36,11 @@ public class BlockWoodBookshelf extends BlockBookshelf implements IWoodBlock {
 	@Override
 	public int getRenderType() {
 		return RENDER_ID;
+	}
+
+	@Override
+	public float getEnchantPowerBonus(World world, int x, int y, int z) {
+		return 1;
 	}
 
 	@Override
