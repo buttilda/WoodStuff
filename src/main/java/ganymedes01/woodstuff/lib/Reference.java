@@ -9,4 +9,7 @@ public class Reference {
 
 	public static final String ITEM_BLOCK_TEXTURE_PATH = MOD_ID + ":";
 	public static final String ENTITY_TEXTURE_PATH = ITEM_BLOCK_TEXTURE_PATH + "textures/entities/";
+
+	public static final String SERVER_PROXY_CLASS = "ganymedes01.woodstuff.proxy.CommonProxy";
+	public static final String CLIENT_PROXY_CLASS = "ganymedes01.woodstuff.proxy.ClientProxy";
 }
