@@ -25,11 +25,12 @@ public class CommonProxy {
 		WoodModule.registerModule(new ErebusModule());
 		WoodModule.registerModule(new DendrologyModule());
 
-		ConfigHandler.INSTANCE.init(event.getSuggestedConfigurationFile());
+		ConfigHandler.INSTANCE.preInit(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(ConfigHandler.INSTANCE);
 	}
 
 	public void init(FMLInitializationEvent event) {
+		ConfigHandler.INSTANCE.init();
 		WoodModule.addModulesBlocks();
 	}
 

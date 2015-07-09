@@ -15,9 +15,11 @@ public class ConfigHandler {
 	public static ConfigHandler INSTANCE = new ConfigHandler();
 	public Configuration configFile;
 
-	public void init(File file) {
+	public void preInit(File file) {
 		configFile = new Configuration(file);
+	}
 
+	public void init() {
 		syncConfigs();
 	}
 
@@ -30,11 +32,11 @@ public class ConfigHandler {
 					String[] data = wood.split("\\|");
 					Block planks = (Block) Block.blockRegistry.getObject(data[0].trim());
 					int meta = Integer.parseInt(data[1].trim());
-					boolean button = Boolean.getBoolean(data[2].trim());
-					boolean fence = Boolean.getBoolean(data[3].trim());
-					boolean gate = Boolean.getBoolean(data[4].trim());
-					boolean pressurePlate = Boolean.getBoolean(data[5].trim());
-					boolean bookshelf = Boolean.getBoolean(data[6].trim());
+					boolean button = Boolean.parseBoolean(data[2].trim());
+					boolean fence = Boolean.parseBoolean(data[3].trim());
+					boolean gate = Boolean.parseBoolean(data[4].trim());
+					boolean pressurePlate = Boolean.parseBoolean(data[5].trim());
+					boolean bookshelf = Boolean.parseBoolean(data[6].trim());
 
 					addWood(planks, meta, button, fence, gate, pressurePlate, bookshelf);
 				}
