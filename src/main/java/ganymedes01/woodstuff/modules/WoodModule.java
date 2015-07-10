@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -59,6 +60,9 @@ public abstract class WoodModule {
 	}
 
 	protected void addWood(Block planks, int meta, boolean addButton, boolean addFence, boolean addGate, boolean addPressurePlate, boolean addBookshelf) {
+		if (planks == null || planks == Blocks.air)
+			return;
+
 		if (addButton) {
 			Block button = new BlockWoodButton(planks, meta);
 			registerBlock(button);
