@@ -2,6 +2,7 @@ package ganymedes01.woodstuff.modules;
 
 import ganymedes01.woodstuff.blocks.BlockWoodBookshelf;
 import ganymedes01.woodstuff.blocks.BlockWoodButton;
+import ganymedes01.woodstuff.blocks.BlockWoodChest;
 import ganymedes01.woodstuff.blocks.BlockWoodFence;
 import ganymedes01.woodstuff.blocks.BlockWoodFenceGate;
 import ganymedes01.woodstuff.blocks.BlockWoodPressurePlate;
@@ -59,7 +60,7 @@ public abstract class WoodModule {
 		this.iEnabled = iEnabled;
 	}
 
-	protected void addWood(Block planks, int meta, boolean addButton, boolean addFence, boolean addGate, boolean addPressurePlate, boolean addBookshelf) {
+	protected void addWood(Block planks, int meta, boolean addButton, boolean addFence, boolean addGate, boolean addPressurePlate, boolean addBookshelf, boolean addChest) {
 		if (planks == null || planks == Blocks.air)
 			return;
 
@@ -92,6 +93,13 @@ public abstract class WoodModule {
 			registerBlock(bookshelf);
 			GameRegistry.addShapedRecipe(new ItemStack(bookshelf), "xxx", "yyy", "xxx", 'x', new ItemStack(planks, 1, meta), 'y', new ItemStack(Items.book));
 			OreDictionary.registerOre("bookshelfWood", bookshelf);
+		}
+		if (addChest) {
+			Block chest = new BlockWoodChest(planks, meta);
+			registerBlock(chest);
+			GameRegistry.addShapedRecipe(new ItemStack(chest), "xxx", "x x", "xxx", 'x', new ItemStack(planks, 1, meta));
+			OreDictionary.registerOre("chest", chest);
+			OreDictionary.registerOre("chestWood", chest);
 		}
 	}
 

@@ -12,6 +12,6 @@ public class ExtraBiomesXLModule extends WoodModule {
 	public void addBlocks() {
 		Block block = (Block) Block.blockRegistry.getObject("ExtrabiomesXL:planks");
 		for (int i = 0; i < 9; i++)
-			addWood(block, i, true, false, false, true, true);
+			addWood(block, i, true, false, false, true, true, true);
 	}
 }

@@ -11,10 +11,13 @@ import ganymedes01.woodstuff.modules.HighlandsModule;
 import ganymedes01.woodstuff.modules.ThaumcraftModule;
 import ganymedes01.woodstuff.modules.VanillaModule;
 import ganymedes01.woodstuff.modules.WoodModule;
+import ganymedes01.woodstuff.tileentity.TileEntityWoodChest;
+import ganymedes01.woodstuff.utils.Utils;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
 
@@ -36,6 +39,7 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		ConfigHandler.INSTANCE.init();
 		WoodModule.addModulesBlocks();
+		GameRegistry.registerTileEntity(TileEntityWoodChest.class, Utils.getUnlocalisedName("chest"));
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
