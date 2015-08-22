@@ -13,6 +13,6 @@ public class ErebusModule extends WoodModule {
 		Block block = (Block) Block.blockRegistry.getObject("erebus:planks");
 		for (int i = 0; i < 11; i++)
 			if (i != 6)
-				addWood(block, i, true, true, true, true, true, true);
+				addWood(block, i, true, true, true, true, true, true, true);
 	}
 }

@@ -27,7 +27,7 @@ public class ConfigHandler {
 		WoodModule module = new WoodModule("configs") {
 			@Override
 			public void addBlocks() {
-				String[] woods = configFile.get(Configuration.CATEGORY_GENERAL, "woods", new String[0], "blockName | metadata | button | fence | gate | pressurePlate | bookshelf | chest \n e.g.:Forestry:planks | 2 | true | true | true | true | false | false").setRequiresMcRestart(true).getStringList();
+				String[] woods = configFile.get(Configuration.CATEGORY_GENERAL, "woods", new String[0], "blockName | metadata | button | fence | gate | pressurePlate | bookshelf | chest | craftingTable \n e.g.:Forestry:planks | 2 | true | true | true | true | false | false | true").setRequiresMcRestart(true).getStringList();
 				for (String wood : woods) {
 					String[] data = wood.split("\\|");
 					Block planks = (Block) Block.blockRegistry.getObject(data[0].trim());
@@ -38,8 +38,9 @@ public class ConfigHandler {
 					boolean pressurePlate = Boolean.parseBoolean(data[5].trim());
 					boolean bookshelf = Boolean.parseBoolean(data[6].trim());
 					boolean chest = data.length >= 8 ? Boolean.parseBoolean(data[7].trim()) : false;
+					boolean craftingTable = data.length >= 9 ? Boolean.parseBoolean(data[8].trim()) : false;
 
-					addWood(planks, meta, button, fence, gate, pressurePlate, bookshelf, chest);
+					addWood(planks, meta, button, fence, gate, pressurePlate, bookshelf, chest, craftingTable);
 				}
 			}
 

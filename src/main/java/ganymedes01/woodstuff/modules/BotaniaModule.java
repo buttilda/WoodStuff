@@ -13,8 +13,8 @@ public class BotaniaModule extends WoodModule {
 		Block livingwood = (Block) Block.blockRegistry.getObject("Botania:livingwood");
 		Block dreamwood = (Block) Block.blockRegistry.getObject("Botania:dreamwood");
 		for (int i = 0; i < 5; i++) {
-			addWood(livingwood, i, true, true, true, true, true, true);
-			addWood(dreamwood, i, true, true, true, true, true, true);
+			addWood(livingwood, i, true, true, true, true, true, true, true);
+			addWood(dreamwood, i, true, true, true, true, true, true, true);
 		}
 	}
 }

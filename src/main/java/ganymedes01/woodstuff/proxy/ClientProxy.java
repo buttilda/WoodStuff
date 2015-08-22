@@ -2,6 +2,7 @@ package ganymedes01.woodstuff.proxy;
 
 import ganymedes01.woodstuff.blocks.BlockWoodChest;
 import ganymedes01.woodstuff.client.BookshelfRenderer;
+import ganymedes01.woodstuff.client.CraftingTableRenderer;
 import ganymedes01.woodstuff.client.ItemWoodChestRenderer;
 import ganymedes01.woodstuff.client.TileEntityWoodChestRenderer;
 import ganymedes01.woodstuff.eventHandler.ClientEventHandler;
@@ -27,6 +28,7 @@ public class ClientProxy extends CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		RenderingRegistry.registerBlockHandler(new BookshelfRenderer());
+		RenderingRegistry.registerBlockHandler(new CraftingTableRenderer());
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWoodChest.class, new TileEntityWoodChestRenderer());
 
 		for (Block block : BlockWoodChest.chests)

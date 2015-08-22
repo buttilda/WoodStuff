@@ -12,9 +12,9 @@ public class ForestryModule extends WoodModule {
 	public void addBlocks() {
 		Block block = (Block) Block.blockRegistry.getObject("Forestry:planks");
 		for (int i = 0; i < 16; i++)
-			addWood(block, i, true, false, true, true, true, true);
+			addWood(block, i, true, false, true, true, true, true, true);
 		block = (Block) Block.blockRegistry.getObject("Forestry:planks2");
 		for (int i = 0; i < 13; i++)
-			addWood(block, i, true, false, true, true, true, true);
+			addWood(block, i, true, false, true, true, true, true, true);
 	}
 }

@@ -11,7 +11,7 @@ public class ThaumcraftModule extends WoodModule {
 	@Override
 	public void addBlocks() {
 		Block block = (Block) Block.blockRegistry.getObject("Thaumcraft:blockWoodenDevice");
-		addWood(block, 6, true, true, true, true, true, true);
-		addWood(block, 7, true, true, true, true, true, true);
+		addWood(block, 6, true, true, true, true, true, true, true);
+		addWood(block, 7, true, true, true, true, true, true, true);
 	}
 }

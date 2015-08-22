@@ -12,6 +12,6 @@ public class BiomesOPlentyModule extends WoodModule {
 	public void addBlocks() {
 		Block block = (Block) Block.blockRegistry.getObject("BiomesOPlenty:planks");
 		for (int i = 0; i < 15; i++)
-			addWood(block, i, true, true, true, true, true, true);
+			addWood(block, i, true, true, true, true, true, true, true);
 	}
 }
