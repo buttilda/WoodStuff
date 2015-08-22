@@ -121,6 +121,7 @@ public class TileEntityWoodChestRenderer extends TileEntitySpecialRenderer {
 
 			ResourceLocation loc = chest.getTexture(!normal);
 			Minecraft.getMinecraft().getTextureManager().loadTexture(loc, new DynamicTexture(result));
+			chest.setTextureGenerated(!normal);
 			return loc;
 		} catch (IOException e) {
 			e.printStackTrace();
