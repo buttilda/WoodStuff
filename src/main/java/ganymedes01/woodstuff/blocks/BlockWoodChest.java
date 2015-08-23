@@ -30,7 +30,7 @@ public class BlockWoodChest extends BlockChest implements IWoodBlock {
 	private final int meta;
 
 	public BlockWoodChest(Block planks, int meta) {
-		super(Integer.MAX_VALUE - meta);
+		super(Integer.MAX_VALUE - chests.size());
 		this.planks = planks;
 		this.meta = meta;
 		setHardness(2.5F);
