@@ -11,6 +11,7 @@ import ganymedes01.woodstuff.modules.ErebusModule;
 import ganymedes01.woodstuff.modules.ExtraBiomesXLModule;
 import ganymedes01.woodstuff.modules.ForestryModule;
 import ganymedes01.woodstuff.modules.HighlandsModule;
+import ganymedes01.woodstuff.modules.NaturaModule;
 import ganymedes01.woodstuff.modules.ThaumcraftModule;
 import ganymedes01.woodstuff.modules.VanillaModule;
 import ganymedes01.woodstuff.modules.WoodModule;
@@ -38,6 +39,7 @@ public class CommonProxy implements IGuiHandler {
 		WoodModule.registerModule(new DendrologyModule());
 		WoodModule.registerModule(new BotaniaModule());
 		WoodModule.registerModule(new ThaumcraftModule());
+		WoodModule.registerModule(new NaturaModule());
 
 		ConfigHandler.INSTANCE.preInit(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(ConfigHandler.INSTANCE);
