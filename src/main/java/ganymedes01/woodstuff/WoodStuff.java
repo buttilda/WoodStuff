@@ -31,6 +31,14 @@ public class WoodStuff {
 		}
 	};
 
+	public static boolean button = true;
+	public static boolean fence = true;
+	public static boolean gate = true;
+	public static boolean pressurePlate = true;
+	public static boolean bookshelf = true;
+	public static boolean chest = true;
+	public static boolean craftingTable = true;
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		proxy.preInit(event);

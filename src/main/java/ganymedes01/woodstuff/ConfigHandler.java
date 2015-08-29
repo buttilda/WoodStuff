@@ -12,6 +12,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ConfigHandler {
 
+	public static final String[] categories = { Configuration.CATEGORY_GENERAL, "Modules", "Stuff" };
 	public static ConfigHandler INSTANCE = new ConfigHandler();
 	public Configuration configFile;
 
@@ -54,6 +55,15 @@ public class ConfigHandler {
 
 		for (WoodModule m : WoodModule.getModules())
 			m.setEnabled(configFile.get("Modules", m.getName(), true).setRequiresMcRestart(true).getBoolean(true));
+
+		String category = "Stuff";
+		WoodStuff.button = configFile.get(category, "Button", WoodStuff.button).getBoolean();
+		WoodStuff.fence = configFile.get(category, "Fence", WoodStuff.fence).getBoolean();
+		WoodStuff.gate = configFile.get(category, "Gate", WoodStuff.gate).getBoolean();
+		WoodStuff.pressurePlate = configFile.get(category, "Pressure Plate", WoodStuff.pressurePlate).getBoolean();
+		WoodStuff.bookshelf = configFile.get(category, "Bookshelf", WoodStuff.bookshelf).getBoolean();
+		WoodStuff.chest = configFile.get(category, "Chest", WoodStuff.chest).getBoolean();
+		WoodStuff.craftingTable = configFile.get(category, "Crafting Table", WoodStuff.craftingTable).getBoolean();
 
 		if (configFile.hasChanged())
 			configFile.save();
