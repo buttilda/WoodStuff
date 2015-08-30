@@ -2,8 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/forge17"/>
+	<classpathentry kind="lib" path="libs/Thaumcraft-1.7.10-4.2.3.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
