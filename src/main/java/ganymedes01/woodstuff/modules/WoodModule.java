@@ -71,30 +71,35 @@ public abstract class WoodModule {
 			registerBlock(button);
 			GameRegistry.addShapelessRecipe(new ItemStack(button), new ItemStack(planks, 1, meta));
 			OreDictionary.registerOre("buttonWood", button);
+			OreDictionary.registerOre("buttonWood", Blocks.wooden_button);
 		}
 		if (addFence && WoodStuff.fence) {
 			Block fence = new BlockWoodFence(planks, meta);
 			registerBlock(fence);
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(fence, 3), "xyx", "xyx", 'x', new ItemStack(planks, 1, meta), 'y', "stickWood"));
 			OreDictionary.registerOre("fenceWood", fence);
+			OreDictionary.registerOre("fenceWood", Blocks.fence);
 		}
 		if (addGate && WoodStuff.gate) {
 			Block fenceGate = new BlockWoodFenceGate(planks, meta);
 			registerBlock(fenceGate);
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(fenceGate), "xyx", "xyx", 'x', "stickWood", 'y', new ItemStack(planks, 1, meta)));
 			OreDictionary.registerOre("fencegateWood", fenceGate);
+			OreDictionary.registerOre("fencegateWood", Blocks.fence_gate);
 		}
 		if (addPressurePlate && WoodStuff.pressurePlate) {
 			Block pressurePlate = new BlockWoodPressurePlate(planks, meta);
 			registerBlock(pressurePlate);
 			GameRegistry.addShapedRecipe(new ItemStack(pressurePlate), "xx", 'x', new ItemStack(planks, 1, meta));
 			OreDictionary.registerOre("pressureplateWood", pressurePlate);
+			OreDictionary.registerOre("pressureplateWood", Blocks.wooden_pressure_plate);
 		}
 		if (addBookshelf && WoodStuff.bookshelf) {
 			Block bookshelf = new BlockWoodBookshelf(planks, meta);
 			registerBlock(bookshelf);
 			GameRegistry.addShapedRecipe(new ItemStack(bookshelf), "xxx", "yyy", "xxx", 'x', new ItemStack(planks, 1, meta), 'y', new ItemStack(Items.book));
 			OreDictionary.registerOre("bookshelfWood", bookshelf);
+			OreDictionary.registerOre("bookshelfWood", Blocks.bookshelf);
 		}
 		if (addChest && WoodStuff.chest) {
 			Block chest = new BlockWoodChest(planks, meta);
@@ -102,6 +107,7 @@ public abstract class WoodModule {
 			GameRegistry.addShapedRecipe(new ItemStack(chest), "xxx", "x x", "xxx", 'x', new ItemStack(planks, 1, meta));
 			OreDictionary.registerOre("chest", chest);
 			OreDictionary.registerOre("chestWood", chest);
+			OreDictionary.registerOre("chestWood", Blocks.chest);
 		}
 		if (addCraftingTable && WoodStuff.craftingTable) {
 			Block craftingTable = new BlockWoodCraftingTable(planks, meta);
@@ -110,6 +116,7 @@ public abstract class WoodModule {
 			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.crafting_table), craftingTable);
 			OreDictionary.registerOre("craftingTable", craftingTable);
 			OreDictionary.registerOre("craftingTableWood", craftingTable);
+			OreDictionary.registerOre("craftingTableWood", Blocks.crafting_table);
 		}
 	}
 
