@@ -12,7 +12,7 @@ public class BotaniaModule extends WoodModule {
 	public void addBlocks() {
 		Block livingwood = (Block) Block.blockRegistry.getObject("Botania:livingwood");
 		Block dreamwood = (Block) Block.blockRegistry.getObject("Botania:dreamwood");
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 6; i++) {
 			addWood(livingwood, i, true, true, true, true, true, true, true);
 			addWood(dreamwood, i, true, true, true, true, true, true, true);
 		}
