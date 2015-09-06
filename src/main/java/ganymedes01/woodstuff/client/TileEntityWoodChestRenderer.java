@@ -108,14 +108,47 @@ public class TileEntityWoodChestRenderer extends TileEntitySpecialRenderer {
 			BufferedImage image = ImageIO.read(Minecraft.getMinecraft().getResourceManager().getResource(res).getInputStream());
 			BufferedImage outline = ImageIO.read(Minecraft.getMinecraft().getResourceManager().getResource(out).getInputStream());
 			BufferedImage result = new BufferedImage(image.getWidth() * (normal ? 4 : 8), image.getHeight() * 4, BufferedImage.TYPE_INT_ARGB);
-			int width = image.getWidth();
-			int height = image.getHeight();
 
-			for (int i = 0; i < (normal ? 4 : 8); i++)
-				for (int j = 0; j < 4; j++)
-					for (int x = 0; x < image.getWidth(); x++)
-						for (int y = 0; y < image.getHeight(); y++)
-							result.setRGB(x + i * width, y + j * height, image.getRGB(x, y));
+			if (normal) {
+				copyImageOverArea(result, image, 43, 30, 12, 12);
+				copyImageOverArea(result, image, 43 - 14, 30, 12, 12);
+				copyImageOverArea(result, image, 43 - 28, 30, 12, 12);
+				copyImageOverArea(result, image, 1, 30, 12, 12);
+
+				copyImageOverArea(result, image, 43, 15, 12, 12);
+				copyImageOverArea(result, image, 43 - 14, 15, 12, 12);
+				copyImageOverArea(result, image, 43 - 28, 15, 12, 12);
+				copyImageOverArea(result, image, 1, 15, 12, 12);
+
+				copyImageOverArea(result, image, 15, 1, 12, 12);
+				copyImageOverArea(result, image, 29, 1, 12, 12);
+				copyImageOverArea(result, image, 15, 20, 12, 12);
+				copyImageOverArea(result, image, 29, 20, 12, 12);
+			} else {
+				copyImageOverArea(result, image, 13, 30, 16, 12);
+				copyImageOverArea(result, image, 29, 30, 16, 12);
+				copyImageOverArea(result, image, 13 + 44, 30, 16, 12);
+				copyImageOverArea(result, image, 29 + 44, 30, 16, 12);
+				copyImageOverArea(result, image, 1, 30, 12, 12);
+				copyImageOverArea(result, image, 45, 30, 12, 12);
+
+				copyImageOverArea(result, image, 13, 15, 16, 12);
+				copyImageOverArea(result, image, 29, 15, 16, 12);
+				copyImageOverArea(result, image, 13 + 44, 15, 16, 12);
+				copyImageOverArea(result, image, 29 + 44, 15, 16, 12);
+				copyImageOverArea(result, image, 1, 15, 12, 12);
+				copyImageOverArea(result, image, 45, 15, 12, 12);
+
+				copyImageOverArea(result, image, 13, 1, 16, 12);
+				copyImageOverArea(result, image, 29, 1, 16, 12);
+				copyImageOverArea(result, image, 13 + 30, 1, 16, 12);
+				copyImageOverArea(result, image, 29 + 30, 1, 16, 12);
+
+				copyImageOverArea(result, image, 13, 20, 16, 12);
+				copyImageOverArea(result, image, 29, 20, 16, 12);
+				copyImageOverArea(result, image, 13 + 30, 20, 16, 12);
+				copyImageOverArea(result, image, 29 + 30, 20, 16, 12);
+			}
 
 			result = merge(result, outline);
 
@@ -149,6 +182,15 @@ public class TileEntityWoodChestRenderer extends TileEntitySpecialRenderer {
 		string = string.toLowerCase();
 		iconName = "textures/blocks/" + iconName + ".png";
 		return new ResourceLocation(string, iconName);
+	}
+
+	private static void copyImageOverArea(BufferedImage img1, BufferedImage img2, int x, int y, int width, int height) {
+		int h = (img2.getHeight() - height) / 2;
+		int w = (img2.getWidth() - width) / 2;
+
+		for (int i = 0; i < width; i++)
+			for (int j = 0; j < height; j++)
+				img1.setRGB(i + x, j + y, img2.getRGB(w + i, h + j));
 	}
 
 	private static BufferedImage merge(BufferedImage img1, BufferedImage... imgs) {
