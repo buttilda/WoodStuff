@@ -4,6 +4,8 @@ import ganymedes01.woodstuff.ConfigHandler;
 import ganymedes01.woodstuff.WoodStuff;
 import ganymedes01.woodstuff.gui.ContainerCraftingTable;
 import ganymedes01.woodstuff.gui.GuiCraftingTable;
+import ganymedes01.woodstuff.modules.AetherModule;
+import ganymedes01.woodstuff.modules.ArsMagicaModule;
 import ganymedes01.woodstuff.modules.BiomesOPlentyModule;
 import ganymedes01.woodstuff.modules.BotaniaModule;
 import ganymedes01.woodstuff.modules.DendrologyModule;
@@ -48,6 +50,8 @@ public class CommonProxy implements IGuiHandler {
 		WoodModule.registerModule(new RidiculousWorldModule());
 		WoodModule.registerModule(new TwilightForestModule());
 		WoodModule.registerModule(new WitcheryModule());
+		WoodModule.registerModule(new ArsMagicaModule());
+		WoodModule.registerModule(new AetherModule());
 
 		ConfigHandler.INSTANCE.preInit(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(ConfigHandler.INSTANCE);
