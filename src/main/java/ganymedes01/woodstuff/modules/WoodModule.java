@@ -9,6 +9,7 @@ import ganymedes01.woodstuff.blocks.BlockWoodFence;
 import ganymedes01.woodstuff.blocks.BlockWoodFenceGate;
 import ganymedes01.woodstuff.blocks.BlockWoodPressurePlate;
 import ganymedes01.woodstuff.items.ItemBlockWood;
+import ganymedes01.woodstuff.utils.TEUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -100,6 +101,8 @@ public abstract class WoodModule {
 			GameRegistry.addShapedRecipe(new ItemStack(bookshelf), "xxx", "yyy", "xxx", 'x', new ItemStack(planks, 1, meta), 'y', new ItemStack(Items.book));
 			OreDictionary.registerOre("bookshelfWood", bookshelf);
 			OreDictionary.registerOre("bookshelfWood", Blocks.bookshelf);
+
+			TEUtils.registerSawmillRecipe(2400, new ItemStack(bookshelf), new ItemStack(planks, 6, meta), new ItemStack(Items.book, 3), 100);
 		}
 		if (addChest && WoodStuff.chest) {
 			Block chest = new BlockWoodChest(planks, meta);
@@ -118,6 +121,8 @@ public abstract class WoodModule {
 			OreDictionary.registerOre("craftingTable", craftingTable);
 			OreDictionary.registerOre("craftingTableWood", craftingTable);
 			OreDictionary.registerOre("craftingTableWood", Blocks.crafting_table);
+
+			TEUtils.registerSawmillRecipe(2400, new ItemStack(craftingTable), new ItemStack(planks, 4, meta));
 		}
 	}
 
