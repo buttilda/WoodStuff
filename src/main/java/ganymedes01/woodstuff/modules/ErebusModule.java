@@ -14,5 +14,14 @@ public class ErebusModule extends WoodModule {
 		for (int i = 0; i < 11; i++)
 			if (i != 6)
 				addWood(block, i, true, false, false, true, true, true, true);
+
+		block = (Block) Block.blockRegistry.getObject("erebus:planks_scorched");
+		addWood(block, 0, true, true, true, true, true, true, true);
+
+		block = (Block) Block.blockRegistry.getObject("erebus:planks_varnished");
+		addWood(block, 0, true, true, true, true, true, true, true);
+
+		block = (Block) Block.blockRegistry.getObject("erebus:petrifiedWoodPlanks");
+		addWood(block, 0, true, true, true, true, true, false, false);
 	}
 }
