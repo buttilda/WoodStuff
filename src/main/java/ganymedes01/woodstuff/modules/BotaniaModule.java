@@ -10,8 +10,8 @@ public class BotaniaModule extends WoodModule {
 
 	@Override
 	public void addBlocks() {
-		Block livingwood = (Block) Block.blockRegistry.getObject("Botania:livingwood");
-		Block dreamwood = (Block) Block.blockRegistry.getObject("Botania:dreamwood");
+		Block livingwood = getBlock("Botania:livingwood");
+		Block dreamwood = getBlock("Botania:dreamwood");
 		addWood(livingwood, 1, true, true, true, true, true, true, true);
 		addWood(dreamwood, 1, true, true, true, true, true, true, true);
 	}

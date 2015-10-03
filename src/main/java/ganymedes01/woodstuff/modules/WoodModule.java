@@ -130,4 +130,11 @@ public abstract class WoodModule {
 		String name = block.getUnlocalizedName().replaceAll("tile.woodstuff.", "").replaceAll(":", ".");
 		GameRegistry.registerBlock(block, ItemBlockWood.class, name);
 	}
+
+	public static Block getBlock(String name) {
+		Block block = (Block) Block.blockRegistry.getObject(name);
+		if (block == null || block == Blocks.air)
+			throw new NullPointerException("WoodStuff could not find any blocks named " + name);
+		return block;
+	}
 }

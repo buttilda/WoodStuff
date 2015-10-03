@@ -10,7 +10,7 @@ public class TwilightForestModule extends WoodModule {
 
 	@Override
 	public void addBlocks() {
-		Block wood = (Block) Block.blockRegistry.getObject("TwilightForest:tile.TFTowerStone");
+		Block wood = getBlock("TwilightForest:tile.TFTowerStone");
 		addWood(wood, 0, true, true, true, true, true, true, true);
 	}
 }

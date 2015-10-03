@@ -10,7 +10,7 @@ public class DendrologyModule extends WoodModule {
 
 	@Override
 	public void addBlocks() {
-		Block block = (Block) Block.blockRegistry.getObject("dendrology:wood0");
+		Block block = getBlock("dendrology:wood0");
 		for (int i = 0; i < 13; i++)
 			addWood(block, i, true, true, true, true, true, true, true);
 	}

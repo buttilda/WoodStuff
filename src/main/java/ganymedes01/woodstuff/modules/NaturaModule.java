@@ -10,7 +10,7 @@ public class NaturaModule extends WoodModule {
 
 	@Override
 	public void addBlocks() {
-		Block planks = (Block) Block.blockRegistry.getObject("Natura:planks");
+		Block planks = getBlock("Natura:planks");
 		for (int i = 0; i < 13; i++)
 			addWood(planks, i, false, false, false, false, false, true, false);
 	}

@@ -10,7 +10,7 @@ public class WitcheryModule extends WoodModule {
 
 	@Override
 	public void addBlocks() {
-		Block wood = (Block) Block.blockRegistry.getObject("witchery:witchwood");
+		Block wood = getBlock("witchery:witchwood");
 		for (int i = 0; i < 3; i++)
 			addWood(wood, i, true, true, true, true, true, true, true);
 	}

@@ -31,7 +31,7 @@ public class ConfigHandler {
 				String[] woods = configFile.get(Configuration.CATEGORY_GENERAL, "woods", new String[0], "blockName | metadata | button | fence | gate | pressurePlate | bookshelf | chest | craftingTable \n e.g.:Forestry:planks | 2 | true | true | true | true | false | false | true").setRequiresMcRestart(true).getStringList();
 				for (String wood : woods) {
 					String[] data = wood.split("\\|");
-					Block planks = (Block) Block.blockRegistry.getObject(data[0].trim());
+					Block planks = WoodModule.getBlock(data[0].trim());
 					int meta = Integer.parseInt(data[1].trim());
 					boolean button = Boolean.parseBoolean(data[2].trim());
 					boolean fence = Boolean.parseBoolean(data[3].trim());
