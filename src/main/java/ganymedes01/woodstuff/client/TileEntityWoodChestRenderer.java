@@ -1,8 +1,5 @@
 package ganymedes01.woodstuff.client;
 
-import ganymedes01.woodstuff.blocks.BlockWoodChest;
-import ganymedes01.woodstuff.utils.Utils;
-
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -13,6 +10,13 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import ganymedes01.woodstuff.blocks.BlockWoodChest;
+import ganymedes01.woodstuff.utils.Utils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelChest;
 import net.minecraft.client.model.ModelLargeChest;
@@ -22,12 +26,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class TileEntityWoodChestRenderer extends TileEntitySpecialRenderer {

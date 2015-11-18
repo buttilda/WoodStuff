@@ -1,16 +1,15 @@
 package ganymedes01.woodstuff.client;
 
-import ganymedes01.woodstuff.blocks.BlockWoodCraftingTable;
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.RenderBlocks;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.world.IBlockAccess;
-
 import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import ganymedes01.woodstuff.blocks.BlockWoodCraftingTable;
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.RenderBlocks;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.world.IBlockAccess;
 
 @SideOnly(Side.CLIENT)
 public class CraftingTableRenderer implements ISimpleBlockRenderingHandler {

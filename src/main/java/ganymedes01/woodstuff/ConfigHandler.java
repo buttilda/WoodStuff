@@ -1,14 +1,13 @@
 package ganymedes01.woodstuff;
 
-import ganymedes01.woodstuff.lib.Reference;
-import ganymedes01.woodstuff.modules.WoodModule;
-
 import java.io.File;
 
-import net.minecraft.block.Block;
-import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import ganymedes01.woodstuff.lib.Reference;
+import ganymedes01.woodstuff.modules.WoodModule;
+import net.minecraft.block.Block;
+import net.minecraftforge.common.config.Configuration;
 
 public class ConfigHandler {
 

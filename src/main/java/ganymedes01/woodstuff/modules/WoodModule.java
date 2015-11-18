@@ -1,5 +1,11 @@
 package ganymedes01.woodstuff.modules;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.registry.GameRegistry;
 import ganymedes01.woodstuff.WoodStuff;
 import ganymedes01.woodstuff.blocks.BlockWoodBookshelf;
 import ganymedes01.woodstuff.blocks.BlockWoodButton;
@@ -10,19 +16,12 @@ import ganymedes01.woodstuff.blocks.BlockWoodFenceGate;
 import ganymedes01.woodstuff.blocks.BlockWoodPressurePlate;
 import ganymedes01.woodstuff.items.ItemBlockWood;
 import ganymedes01.woodstuff.utils.TEUtils;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public abstract class WoodModule {
 

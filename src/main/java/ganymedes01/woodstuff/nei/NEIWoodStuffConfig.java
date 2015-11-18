@@ -1,10 +1,10 @@
 package ganymedes01.woodstuff.nei;
 
-import ganymedes01.woodstuff.gui.GuiCraftingTable;
-import ganymedes01.woodstuff.lib.Reference;
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
 import codechicken.nei.recipe.DefaultOverlayHandler;
+import ganymedes01.woodstuff.gui.GuiCraftingTable;
+import ganymedes01.woodstuff.lib.Reference;
 
 public class NEIWoodStuffConfig implements IConfigureNEI {
 

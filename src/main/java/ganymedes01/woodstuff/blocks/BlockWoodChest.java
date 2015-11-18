@@ -1,13 +1,14 @@
 package ganymedes01.woodstuff.blocks;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import ganymedes01.woodstuff.IWoodBlock;
 import ganymedes01.woodstuff.WoodStuff;
 import ganymedes01.woodstuff.tileentity.TileEntityWoodChest;
 import ganymedes01.woodstuff.utils.Utils;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockChest;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -15,8 +16,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockWoodChest extends BlockChest implements IWoodBlock {
 

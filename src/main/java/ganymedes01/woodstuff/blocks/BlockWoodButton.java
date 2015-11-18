@@ -1,13 +1,13 @@
 package ganymedes01.woodstuff.blocks;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import ganymedes01.woodstuff.IWoodBlock;
 import ganymedes01.woodstuff.WoodStuff;
 import ganymedes01.woodstuff.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockButtonWood;
 import net.minecraft.util.IIcon;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockWoodButton extends BlockButtonWood implements IWoodBlock {
 

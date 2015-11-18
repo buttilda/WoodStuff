@@ -1,5 +1,8 @@
 package ganymedes01.woodstuff.blocks;
 
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import ganymedes01.woodstuff.IWoodBlock;
 import ganymedes01.woodstuff.WoodStuff;
 import ganymedes01.woodstuff.utils.Utils;
@@ -9,9 +12,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import cpw.mods.fml.client.registry.RenderingRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockWoodCraftingTable extends BlockWorkbench implements IWoodBlock {
 

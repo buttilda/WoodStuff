@@ -1,16 +1,15 @@
 package ganymedes01.woodstuff.client;
 
-import ganymedes01.woodstuff.blocks.BlockWoodChest;
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelChest;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.client.IItemRenderer;
-
 import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import ganymedes01.woodstuff.blocks.BlockWoodChest;
+import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelChest;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.IItemRenderer;
 
 @SideOnly(Side.CLIENT)
 public class ItemWoodChestRenderer implements IItemRenderer {

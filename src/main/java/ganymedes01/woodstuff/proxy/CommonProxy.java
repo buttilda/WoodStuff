@@ -1,5 +1,12 @@
 package ganymedes01.woodstuff.proxy;
 
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.IGuiHandler;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import ganymedes01.woodstuff.ConfigHandler;
 import ganymedes01.woodstuff.WoodStuff;
 import ganymedes01.woodstuff.gui.ContainerCraftingTable;
@@ -25,13 +32,6 @@ import ganymedes01.woodstuff.tileentity.TileEntityWoodChest;
 import ganymedes01.woodstuff.utils.Utils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.IGuiHandler;
-import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CommonProxy implements IGuiHandler {
 
