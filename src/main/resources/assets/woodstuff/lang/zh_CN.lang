@@ -1,0 +1,9 @@
+itemGroup.woodstuff=Wood Stuff
+
+tile.woodstuff.button.name=按钮 (%s)
+tile.woodstuff.bookshelf.name=书架 (%s)
+tile.woodstuff.fence.name=栅栏 (%s)
+tile.woodstuff.fence_gate.name=栅栏门 (%s)
+tile.woodstuff.pressure_plate.name=压力板 (%s)
+tile.woodstuff.chest.name=箱子 (%s)
+tile.woodstuff.crafting_table.name=工作台 (%s)
