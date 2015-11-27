@@ -17,6 +17,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ganymedes01.woodstuff.blocks.BlockWoodChest;
 import ganymedes01.woodstuff.utils.Utils;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelChest;
 import net.minecraft.client.model.ModelLargeChest;
@@ -36,7 +37,11 @@ public class TileEntityWoodChestRenderer extends TileEntitySpecialRenderer {
 	@Override
 	public void renderTileEntityAt(TileEntity tile, double x, double y, double z, float partialTicks) {
 		TileEntityChest chest = (TileEntityChest) tile;
-		BlockWoodChest block = (BlockWoodChest) chest.getBlockType();
+		Block b = chest.getBlockType();
+		if (!(b instanceof BlockWoodChest))
+			return;
+
+		BlockWoodChest block = (BlockWoodChest) b;
 		int meta = chest.getBlockMetadata();
 
 		chest.checkForAdjacentChests();
