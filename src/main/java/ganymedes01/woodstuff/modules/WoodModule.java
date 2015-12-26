@@ -107,6 +107,7 @@ public abstract class WoodModule {
 			Block chest = new BlockWoodChest(planks, meta);
 			registerBlock(chest);
 			GameRegistry.addShapedRecipe(new ItemStack(chest), "xxx", "x x", "xxx", 'x', new ItemStack(planks, 1, meta));
+			GameRegistry.addShapelessRecipe(new ItemStack(Blocks.chest), chest);
 			OreDictionary.registerOre("chest", chest);
 			OreDictionary.registerOre("chestWood", chest);
 			OreDictionary.registerOre("chest", Blocks.chest);
