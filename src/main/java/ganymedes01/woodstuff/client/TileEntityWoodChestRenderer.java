@@ -188,6 +188,10 @@ public class TileEntityWoodChestRenderer extends TileEntitySpecialRenderer {
 	}
 
 	private static void copyImageOverArea(BufferedImage img1, BufferedImage img2, int x, int y, int width, int height) {
+		x = (x * img2.getWidth()) / 16;
+		y = (y * img2.getHeight()) / 16;
+		width = (width * img2.getWidth()) / 16;
+		height = (height * img2.getHeight()) / 16;
 		int h = (img2.getHeight() - height) / 2;
 		int w = (img2.getWidth() - width) / 2;
 
