@@ -54,6 +54,9 @@ public class CommonProxy implements IGuiHandler {
 		WoodModule.registerModule(new ArsMagicaModule());
 		WoodModule.registerModule(new AetherModule());
 		WoodModule.registerModule(new TotemicModule());
+		WoodModule.registerModule(new FossilsAndArchaeologyModule());
+		WoodModule.registerModule(new GrowthcraftBambooModule());
+
 
 		ConfigHandler.INSTANCE.preInit(event.getSuggestedConfigurationFile());
 		FMLCommonHandler.instance().bus().register(ConfigHandler.INSTANCE);
