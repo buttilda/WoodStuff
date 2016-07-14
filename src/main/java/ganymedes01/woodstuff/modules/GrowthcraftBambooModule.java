@@ -11,6 +11,6 @@ public class GrowthcraftBamboo extends WoodModule {
 	@Override
 	public void addBlocks() {
 		Block planks = getBlock("Growthcraft|Bamboo:grc.bambooBlock");
-		addWood(planks, 0, true, true, true, true, true, true, true);
+		addWood(planks, 0, true, false, false, true, true, true, true);
 	}
 }
